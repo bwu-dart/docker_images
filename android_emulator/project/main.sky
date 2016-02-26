@@ -1,0 +1,9 @@
+<sky>
+  <script>
+    import 'package:some_android_demo/main.dart';
+
+    void main() {
+      new HelloWorldApp();
+    }
+  </script>
+</sky>

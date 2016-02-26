@@ -1,0 +1,8 @@
+#!/bin/sh
+VERSION=0.1.1
+REPOSITORY_PREFIX=zoechi
+NAME=dart-sass
+
+echo "Building $REPOSITORY_PREFIX/$NAME:$VERSION"
+docker build -f image/Dockerfile -t $REPOSITORY_PREFIX/$NAME .
+docker tag -f $REPOSITORY_PREFIX/$NAME $REPOSITORY_PREFIX/$NAME:$VERSION

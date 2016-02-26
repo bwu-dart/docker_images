@@ -1,0 +1,52 @@
+name: dart_dummy_app
+version: 0.0.1
+author: Günter Zöchbauer <guenter@gzoechbauer.com>
+publish-to: none
+environment:
+  sdk: '>=1.8.0-dev.4 <2.0.0'
+
+dependencies:
+  appengine: any
+  args: any
+  bignum: any
+  bwu_datagrid: any
+  bwu_polymer_routing: any
+  browser: any
+  collection: any
+  core_elements: any
+  di: any
+  gcloud: any
+  googleapis: any 
+  googleapis_auth: any
+  googleapis_beta: any 
+  http_server: any
+  http_multi_server: any
+  intl: any
+  logging: any
+  logging_handlers: any
+  path: any
+  paper_elements: any
+  polymer: any
+  quiver: any
+  quiver_log: any
+  #smoke: any 
+  shelf: any
+  shelf_appengine: any
+  shelf_auth: any
+  shelf_route: any
+  shelf_exception_response: any
+#  shelf_path: ^0.1.1+1
+  shelf_static: any
+  shelf_web_socket: any
+  uuid: any
+#  smoke: any #^0.2.1+1
+
+dependency_overrides:
+  analyzer: ^0.22.4 #^0.23.0-dev.12
+#  googleapis: ^0.5.0 
+  quiver: ^0.19.0+1
+
+dev_dependencies:
+  unittest: any
+
+

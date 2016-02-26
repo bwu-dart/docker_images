@@ -1,0 +1,9 @@
+syslog:
+  image: zoechi/rsyslog
+  ports:
+  - "514:514"
+  - "514:514/udp"
+  volumes:
+  - ./logs/:/var/log
+#  links:
+#  - redis

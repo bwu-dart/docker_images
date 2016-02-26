@@ -1,0 +1,23 @@
+{
+  "name": "bwu_dart_node_sass_packages_importer",
+  "version": "0.1.0",
+  "description": "A custom importer for node-sass to enable importing files from Dart packages",
+  "main": "./src",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bwu-dart/bwu_dart_node_sass_packages_importer.git"
+  },
+  "keywords": [
+    "dart",
+    "pub",
+    "node",
+    "sass",
+    "importer"
+  ],
+  "author": "Günter Zöchbauer <guenter@gzoechbauer.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bwu-dart/bwu_dart_node_sass_packages_importer/issues"
+  },
+  "homepage": "https://github.com/bwu-dart/bwu_dart_node_sass_packages_importer#readme"
+}

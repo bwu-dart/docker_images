@@ -1,0 +1,10 @@
+name: bwu_dart_installer
+version: 0.1.0
+description: Install or update bleeding edge dart from the dart archive
+environment:
+  sdk: '>=1.8.2 <2.0.0'
+dependencies:
+  bwu_dart_archive_downloader: ^0.3.0+4
+  stack_trace: any
+executables:
+  dartupdate:

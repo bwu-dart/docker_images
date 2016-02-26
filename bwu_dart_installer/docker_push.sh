@@ -2,7 +2,7 @@
 VERSION=$(date +"%Y%m%d")
 #1.8.0-dev.4.6
 REPOSITORY_PREFIX=zoechi
-NAME=mojo
+NAME=bwu_dart_installer
 
 docker_build.sh
 
