@@ -6,5 +6,5 @@ NAME=bwu_dart_installer
 cd image
 #docker pull $(awk '/^FROM[ \t\r\n\v\f]/ { print /:/ ? $2 : $2":latest" }' Dockerfile)
 echo "Building $REPOSITORY_PREFIX/$NAME:$VERSION"
-docker build -t $REPOSITORY_PREFIX/$NAME .
+docker build --no-cache -t $REPOSITORY_PREFIX/$NAME .
 docker tag -f $REPOSITORY_PREFIX/$NAME $REPOSITORY_PREFIX/$NAME:$VERSION

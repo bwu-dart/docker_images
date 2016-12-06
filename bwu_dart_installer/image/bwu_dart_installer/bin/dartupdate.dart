@@ -4,24 +4,25 @@
 
 library maintenance.bin.dartupdate;
 
+import 'dart:async' show Future;
 import 'dart:io' as io;
 import 'package:bwu_dart_archive_downloader/dart_update.dart';
 import 'package:stack_trace/stack_trace.dart';
 
-const installDir = '/usr/local/bin/';
+const String installDir = '/usr/local/bin/';
 
-main() async {
-  Chain.capture(() async {
+Future<Null> main() async {
+  await Chain.capture(() async {
     io.Directory tempDir;
-      tempDir = io.Directory.systemTemp.createTempSync('sdk_download_test-');
-      final updater = new DartUpdate(new SdkDownloadOptions()
-        ..downloadDirectory = tempDir
-        ..channel = DownloadChannel.beRaw
-        ..installDirectory = new io.Directory('/usr/local/bin/dart/')
-        ..backupDirectory = new io.Directory('/usr/local/bin/dart_backup'));
+    tempDir = io.Directory.systemTemp.createTempSync('dart_sdk_download-');
+    final updater = new DartUpdate(new SdkDownloadOptions()
+      ..downloadDirectory = tempDir
+      ..channel = DownloadChannel.beRaw
+      ..installDirectory = new io.Directory('/usr/local/bin/dart/')
+      ..backupDirectory = new io.Directory('/usr/local/bin/dart_backup'));
 
-      await updater.update();
-      final String groupId = io.Platform.environment['DART_GROUP_ID'];
+    await updater.update();
+//      final String groupId = io.Platform.environment['DART_GROUP_ID'];
 //      if(groupId == null || groupId.isEmpty) {
 //        print(
 //            'No "DART_GROUP_ID" environment variable provided to grant permissions to.');
@@ -31,10 +32,11 @@ main() async {
 //          'g:${groupId}:rwX,d:g:${groupId}:rwX',
 //          '/usr/local/bin/dart',
 //        ]);
-        io.Process.start('chmod', ['-R', 'u+rwx,g+rx', '/usr/local/bin/dart']);
+    await io.Process
+        .start('chmod', ['-R', 'u+rwx,g+rx', '/usr/local/bin/dart']);
 //      }
-  }, onError: (error, stack) {
-    print('Dart update failed: ${e.message}.');
+  }, onError: (dynamic error, stack) {
+    print('Dart update failed: $error.');
     print(error);
     print(new Trace.from(stack).terse);
   });

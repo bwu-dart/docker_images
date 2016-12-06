@@ -4,7 +4,7 @@
 # required to run once
 #   setfacl -Rm g:staff:rwX,d:g:staff:rwX /usr/local/bin
 
-FROM google/dart
+FROM google/dart:dev
 
 MAINTAINER Günter Zöchbauer <gunter@gzoechbauer.com>
 
